@@ -7,7 +7,7 @@ int ush_launch(char **args){
 	}
 	else if(pid == 0){
 		execvp(args[0], args);
-		exit(EXIT_FAILURE);
+		//exit(EXIT_FAILURE);
 	}
 	else{
 		wait(NULL);	

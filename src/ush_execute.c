@@ -1,6 +1,9 @@
 #include "../inc/ush.h"
 
 int ush_execute(char **args){
+	if(!args){
+		return ush_launch(args);
+	}
 
 	/*
 	 * pwd :
@@ -34,13 +37,14 @@ int ush_execute(char **args){
 		mx_printerr("ush: command not found: ");
 		mx_printerr(args[0]);
 		mx_printerr("\n");
+		return 1;
 	}
 
 	switch(switch_arg){
 		case 2: exit(0);
 		case 5: ush_cd(args); break;
-		case 6: break;
-		case 8: ush_echo(args);
+		case 6: ush_pwd(args); break;
+		case 8: ush_echo(args); break;
 	}
 
 	return ush_launch(args);

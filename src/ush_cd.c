@@ -2,7 +2,13 @@
 
 int ush_cd(char **args){
 	if(args[1] == NULL){
-		mx_printerr("ush: cd: expected argument\n");
+		char *curr_user = mx_strnew(32);
+		curr_user = getlogin();
+		char *path = mx_strnew(6 + mx_strlen(curr_user));
+		mx_strcat(path, "/home/");
+		mx_strcat(path, curr_user);
+		chdir(path);
+		mx_strdel(&path);
 	}
 	else{
 		if(args[2] != NULL){
