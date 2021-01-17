@@ -14,7 +14,7 @@ char **ush_parse_line(char *line){
 	token = strtok(line, USH_TOK_DELIM);
 	while(token != NULL){
 		tokens[pos] = token;
-		printf("tokens[%d]:%s\n",pos,tokens[pos]);
+		//printf("tokens[%d]:%s\n",pos,tokens[pos]);
 		pos++;
 
 		if(pos >= bufsize){

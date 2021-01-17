@@ -14,7 +14,7 @@ obj:
 	@mkdir -p $@
 obj/%.o: src/%.c $(INC_FILES)
 	clang $(CFLAGS) -c $< -o $@ -I inc
-
+	@printf "\r\33[2Klibmx \033[33;1mcompile \033[0m$(<:src/%.c=%) "
 clean:
 	@rm -rf obj $@
 	@rm -rf $(OBJ_FILES) $@	

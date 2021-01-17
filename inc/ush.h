@@ -25,6 +25,7 @@ int ush_launch(char **args);
 int ush_cd(char **args);
 int ush_echo(char **args);
 int ush_pwd(char **args);
+int ush_exit();
 
 // Additional
 void mx_printerr(const char *str);

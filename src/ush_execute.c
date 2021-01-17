@@ -41,7 +41,7 @@ int ush_execute(char **args){
 	}
 
 	switch(switch_arg){
-		case 2: exit(0);
+		case 2: ush_exit(); break;
 		case 5: ush_cd(args); break;
 		case 6: ush_pwd(args); break;
 		case 8: ush_echo(args); break;

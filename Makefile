@@ -1,6 +1,6 @@
-NAME	=	ush
+NAME = ush
 
-CFLG	=	-std=c11 $(addprefix -W, all extra error pedantic) -g
+CFLG = -std=c11 $(addprefix -W, all extra error pedantic) -g
 
 SRC_DIR	= src
 INC_DIR	= inc
