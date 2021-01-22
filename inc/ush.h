@@ -41,26 +41,26 @@
 #define MAX_LEN 10
 
 // Timers
-#define MX_WNOHANG          0x00000001
-#define MX_WUNTRACED        0x00000002
-#define MX_W_INT(w)         (*(int *)&(w))  // Convert union wait to int
-#define MX_WSTAT(x)         (MX_W_INT(x) & 0177)
-#define MX_WSTOPPED         0177            // _WSTATUS if process is stopped
-#define MX_WSTOPSIG(x)      (MX_W_INT(x) >> 8)
-#define MX_WIFCONT(x)       (MX_WSTAT(x) == MX_WSTOPPED && MX_WSTOPSIG(x) == 0x13)
-#define MX_WIFSTOPP(x)      (MX_WSTAT(x) == MX_WSTOPPED && MX_WSTOPSIG(x) != 0x13)
-#define MX_WIFEXITED(x)     (MX_WSTAT(x) == 0)
-#define MX_WIFSIGNALED(x)   (MX_WSTAT(x) != MX_WSTOPPED && MX_WSTAT(x) != 0)
-#define MX_WTERMSIG(x)      (MX_WSTAT(x))
-#define MX_W_EXITCODE(ret, sig)    ((ret) << 8 | (sig))
-#define MX_W_STOPCODE(sig)  ((sig) << 8 | MX_WSTOPPED)
-#define MX_WEXITED          0x00000004  // [XSI] Processes which have exitted
-#define MX_WCONTINUED       0x00000010  // [XSI] Any child stopped then continu
-#define MX_WNOWAIT          0x00000020  // [XSI] Leave process returned waitabl
-#define MX_SIG_DFL          (void (*)(int))0
-#define MX_SIG_IGN          (void (*)(int))1
-#define MX_SIG_HOLD         (void (*)(int))5
-#define MX_SIG_ERR          ((void (*)(int))-1)
+#define MX_WNOHANG          		0x00000001
+#define MX_WUNTRACED        		0x00000002
+#define MX_W_INT(w)         		(*(int *)&(w))  // Convert union wait to int
+#define MX_WSTAT(x)         		(MX_W_INT(x) & 0177)
+#define MX_WSTOPPED         		0177            // _WSTATUS if process is stopped
+#define MX_WSTOPSIG(x)      		(MX_W_INT(x) >> 8)
+#define MX_WIFCONT(x)       		(MX_WSTAT(x) == MX_WSTOPPED && MX_WSTOPSIG(x) == 0x13)
+#define MX_WIFSTOPP(x)      		(MX_WSTAT(x) == MX_WSTOPPED && MX_WSTOPSIG(x) != 0x13)
+#define MX_WIFEXITED(x)     		(MX_WSTAT(x) == 0)
+#define MX_WIFSIGNALED(x)   		(MX_WSTAT(x) != MX_WSTOPPED && MX_WSTAT(x) != 0)
+#define MX_WTERMSIG(x)      		(MX_WSTAT(x))
+#define MX_W_EXITCODE(ret, sig)		((ret) << 8 | (sig))
+#define MX_W_STOPCODE(sig)  		((sig) << 8 | MX_WSTOPPED)
+#define MX_WEXITED          		0x00000004  // [XSI] Processes which have exitted
+#define MX_WCONTINUED       		0x00000010  // [XSI] Any child stopped then continu
+#define MX_WNOWAIT          		0x00000020  // [XSI] Leave process returned waitabl
+#define MX_SIG_DFL          		(void (*)(int))0
+#define MX_SIG_IGN          		(void (*)(int))1
+#define MX_SIG_HOLD         		(void (*)(int))5
+#define MX_SIG_ERR          		((void (*)(int))-1)
 
 // Colors
 #define MX_BLK          "\x1B[30m"
@@ -197,8 +197,8 @@ typedef struct  _export {
 }               Export;
 
 typedef struct  _stack {
-    int         size;       // Size = MX_JOBS_NUMBER
     int*        stack;
+    int         size;       // Size = MX_JOBS_NUMBER
     int         top;        // Index of last add job
     int         last;       // Current job gor fg
     int         prev_last;
@@ -484,7 +484,7 @@ char *mx_sub_str_command(char *, Prompt *);
 
 // Builtin commands
 int mx_env(Prompt *, Process *);	// mx_do_env.c
-int mx_echo(Prompt *, Process *);   // mx_do_echo.c
+int mx_echo(Prompt *, Process *);   	// mx_do_echo.c
 int mx_fg(Prompt *, Process *);		// mx_do_fg.c
 int mx_bg(Prompt *, Process *);		// mx_do_bg.c
 int mx_cd(Prompt *, Process *);		// mx_do_cd.c
