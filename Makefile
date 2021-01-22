@@ -14,7 +14,7 @@ LMX_DIR	= libmx
 LMX_A:=	$(LMX_DIR)/libmx.a
 LMX_INC:= $(LMX_DIR)/inc
 
-all: install
+all: install clean
 
 install: $(LMX_A) $(NAME)
 
