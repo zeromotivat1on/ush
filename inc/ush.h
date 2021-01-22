@@ -18,11 +18,10 @@
 #include <string.h>
 #include <dirent.h>
 #include <termios.h>
-#include <signal.h>
 #include <term.h>
 #include <curses.h>
 #include <limits.h>
-#include <termios.h>
+#include <signal.h>
 #include <grp.h>
 
 // Exit
