@@ -1,7 +1,7 @@
 # ush
 A basic command-line interpreter with features without which there can be no shell.\
 The shell must:\
-  • have the default prompt must look like u$h>, followed by a space character\
+\t  • have the default prompt must look like u$h>, followed by a space character\
   • deal only with one line user input.\
     In other cases, the appropriate descriptive error message must be displayed\
   • implement builtin commands without flags: export, unset, exit, fg\
