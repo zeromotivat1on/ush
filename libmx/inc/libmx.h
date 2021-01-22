@@ -9,7 +9,7 @@
 #include <fcntl.h>
 #include <wchar.h>
 #include <locale.h>
-#include <malloc.h>
+#include <malloc/malloc.h>
 
 typedef struct s_list { 
     void *data;
